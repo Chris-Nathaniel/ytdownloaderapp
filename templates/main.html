@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <title>Youtube Downloader</title>
+
+</head>
+<body>
+  <nav class="menu-bar">
+    <a class="menu-link" href="{{ url_for('home')}}"><span class="tada">Tada!</span> a free youtube downloader</a>
+    <!-- Add more menu items as needed -->
+  </nav>
+  <h1><span class="tada">Tada!</span> youtube downloader</h1>
+
+  <!-- Search form -->
+  <form action="#" method="post">
+      <div class="input-wrapper">
+          <i class="material-icons"> search </i>
+          <input type="text" id="search" name="search" placeholder="Enter YouTube link or video name to download">
+      </div>
+      <div class="button-wrapper">
+          <button type="submit" class="search_button">Search</button>
+      </div>
+  </form>
+
+{%if show_results %}
+  <h2>Search results of: <span class="query">{{query}}</span></h2>
+  {% endif %}
+  <ul>
+    {% for i in range(result|length) %}
+    <li class="url">
+      <p class="numbering">{{ loop.index }}.</p><a class="url_inside" href="{{ result[i] }}" target="_blank">{{ result[i] }}</a>
+      <form action="{{ url_for('select_quality') }}" method="post" style="display: inline;">
+        <input type="hidden" name="video_url" value="{{ result[i] }}">
+        <button type="submit" class="download-button">Select</button>
+      </form>
+    </li>
+    <li class="embed">
+        <iframe width="455" height="315" src="{{ embed[i] }}" frameborder="0" allowfullscreen></iframe>
+    </li>
+    <li>
+      <p class="video_title">{{video_title[i]}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+
+ <nav class="info-menu">
+  <a class="body-link" href="#about">About us</a>
+   <p class= about_us>Welcome to Tada! a free YouTube Downloader. Are you looking to download your favorite YouTube videos hassle-free? Look no further! Tada! YouTube Downloader is your one-stop destination for downloading YouTube videos quickly and easily.</p>
+</nav>
+<nav class="info-menu">
+  <a class="body-link" href="#about">How to use?</a>
+   <p class= about_us>
+
+<h4>Step 1: Search or paste the link of youtube video </h4>
+
+	<ul>Type in the YouTube video link or video name in the search bar. </ul>
+	<ul>Click the search button. </ul>
+	<ul>Choose the video you want to download. </ul>
+
+<h4>Step 2: Select the quality of video and download </h4>
+  <ul>Click the select button to choose the quality of video. </ul>
+  <ul>Click the download button and choose the save file location. </ul>
+</nav>
+
+  <!-- Add the "Made by Chris" label -->
+  <div class="made-by">@2023 chris</div>
+
+</body>
+</html>

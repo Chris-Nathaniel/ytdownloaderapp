@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.85">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{{ url_for('static', filename='selection.css') }}">
+  <title>Selection Quality</title>
+
+</head>
+<body>
+  <nav class="menu-bar">
+    <a class="menu-link" href="{{ url_for('home')}}"><span class="tada">Tada!</span> a free youtube downloader</a>
+  </nav>
+
+
+{%if show_results %}
+  <h2>Search results of: <span class="query">{{query}}</span></h2>
+  {% endif %}
+  <ul>
+    {% for i in range(result|length) %}
+      <li class="url">
+        <table class="video-quality-table">
+          <tr>
+            <td colspan="3">
+              Video: {{ video_title[i] }}
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <iframe width="455" height="315" src="{{ embed[i] }}" frameborder="0" allowfullscreen></iframe>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              Resolution Available
+            </td>
+          </tr>
+          {% for resolution in available_resolution[i] %}
+          <tr>
+            <td>{{loop.index}}.</td>
+            <td>
+              <label for="resolution">{{resolution}}</label>
+              <input type="radio" id="resolution" name="quality" value="{{resolution}}">
+            </td>
+            <td>
+              <form action="{{ url_for('download_video') }}" method="post" style="display: inline;">
+                <input type="hidden" name="video_url" value="{{ result[i] }}">
+                <button type="submit" class="download-button">Download Video</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td colspan="3">
+              Audio Only
+            </td>
+          </tr>
+          {% for i in range(1) %}
+          <tr>
+          <td>{{loop.index}}</td>
+          <td>
+              <label for="audio">audio only</label>
+              <input type="radio" id="audio" name="quality" value="audio">
+          </td>
+          <td>
+              <form action="{{ url_for('download_audio') }}" method="post" style="display: inline;">
+                <input type="hidden" name="video_url" value="{{ result[i] }}">
+                <button type="submit" class="download-button">Download Audio</button>
+              </form>
+          </td>
+          {% endfor %}
+        </table>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- Add the "Made by Chris" label -->
+  <div class="made-by">@2023 chris</div>
+
+</body>
+</html>

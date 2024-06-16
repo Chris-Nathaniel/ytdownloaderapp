@@ -1,0 +1,245 @@
+/* Add this to your existing CSS styles */
+.menu-bar {
+  background-color: #6b1a2e;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 10px soft-light #ccc;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #fff5f5;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu-link:hover {
+  color: #706b6b;
+}
+
+/* Add this to your existing CSS styles */
+.info-menu {
+  background-color: #fff;
+  text-align: center;
+  padding: 10px;
+  max-width: 370px;
+  margin: 20px auto;
+  border: 10px soft-light #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.info-menu .body-link {
+  text-decoration: none;
+  color: #404040;
+  font-size: 18px;
+  border-bottom: 1px solid #404040;
+  padding-bottom: 5px;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin-top: 90px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: bottom;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 350px;
+  height: 30px;
+  padding: 8px;
+  border: 1px soft-light #6b1a2e;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.input-wrapper,
+.button-wrapper {
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  padding: 5px;
+  color: #000000;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
+}
+
+.url,
+.embed {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.url_inside {
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.url {
+  padding: 0px 1px;
+  background-color: #B22222;
+  color: #black;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.download-button {
+  background-color: #fff;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.query {
+  color: blue;
+  font-size: 18px;
+}
+
+.tada {
+  color: #c8aa14;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  margin-top: 30px;
+  margin-right: 5px;
+  font-size: 26px;
+  padding: 5px;
+}
+
+.year {
+  bottom: 15px;
+  font-size: 11px;
+}
+
+.video_title {
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 460px;
+  word-wrap: break-word;
+}
+
+.video_title:hover {
+  color: #404040;
+}
+
+.made-by {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+h1 {
+  color: #B22222;
+  font-size: 28px;
+}
+
+button {
+  padding: 8px 20px;
+  background-color: #981b1b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Add this to your existing CSS styles */
+.video-quality-table {
+  border: 2px solid #ccc; /* Make the table borders thicker */
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc; /* Add a bottom border */
+  max-width: 460px
+}
+
+.video-quality-table td {
+  border: 2px solid #ccc; /* Make cell borders thicker */
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.video-quality-table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.video-quality-table tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.video-quality-table label {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.video-quality-table input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Adjust the button style to match your existing button styles */
+.video-quality-table .download-button {
+  display: block;
+  margin: 0 auto; /* Center the button horizontally */
+  background-color: #981b1b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 20px;
+  margin-top: 5px; /* Add some space between the button and the label */
+  margin-bottom: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.video-quality-table .download-button:hover {
+  background-color: #B22222;
+}
+label[for="resolution"] {
+  align-text: center;
+  margin-left: 20px;
+
+}
